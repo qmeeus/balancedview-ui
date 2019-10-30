@@ -1,5 +1,6 @@
 import os, os.path as p
 import dotenv
+import uuid
 
 
 dotenv.load_dotenv(p.join(p.dirname(__file__), ".env"))
