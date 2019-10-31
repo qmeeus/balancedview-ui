@@ -1,0 +1,7 @@
+# User interface
+
+*This repository is the user interface of a larger software located [here](https://github.com/qmeeus/balanced-view). For more information about the whole project, please refer to the parent repository.*
+
+The UI is pretty intuitive for anyone with some experience with developing Flask websites and we will thus not develop it here. For a general understanding, it suffices to say that the only thing that it does is to capture user input, format it in a JSON document to forward to the API and display the API results in a web page. The code is very simple and self-explanatory. I won't go into the trouble of explaining how to add or modify web pages, many tutorials exist that explain this much better than I would.
+
+*A note on security*: We use a CSRF token in the form to prevent [Cross-Site Request Forgery](https://en.wikipedia.org/wiki/Cross-site_request_forgery) attacks. We use the ``flask-csp` library to implement the [Content Security Policy](https://en.wikipedia.org/wiki/Content_Security_Policy) that protects against XSS and other attacks. If you encounter problems displaying content in the web page, badly configured CSP is likely the culprit. Check out how they are implemented versus what is sent by the server. Note that `nginx` might tamper with these so the cause of the problem can be more complex that first meets the eye. Please refer to `flask` documentation (and Google) for more information about these.
